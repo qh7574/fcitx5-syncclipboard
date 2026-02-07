@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">剪贴板同步</string>
+    <string name="plugin_description">与 SyncClipboard 服务器同步剪贴板</string>
+    
+    <!-- Settings -->
+    <string name="settings_title">设置</string>
+    <string name="server_address">服务器地址</string>
+    <string name="server_address_summary">例如 http://192.168.1.100:5000/clipboard</string>
+    <string name="username">用户名</string>
+    <string name="password">密码</string>
+    <string name="sync_interval">同步间隔（秒）</string>
+    <string name="test_connection">测试连接</string>
+    <string name="connection_success">连接成功</string>
+    <string name="connection_failed">连接失败</string>
+    <string name="testing_connection">正在测试连接...</string>
+    
+    <string name="quick_sync">快速同步</string>
+    <string name="quick_sync_summary">开启时后台持续轮询；关闭时仅在输入法激活时轮询（当前仅支持后台持续轮询或手动同步）</string>
+    <string name="please_set_server_address">请先设置服务器地址</string>
+    <string name="connecting_to">正在连接到 %s...</string>
+    <string name="unknown_error">未知错误</string>
+</resources>

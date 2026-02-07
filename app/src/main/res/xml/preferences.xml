@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <EditTextPreference
+        app:key="server_address"
+        app:title="@string/server_address"
+        app:summary="@string/server_address_summary"
+        app:useSimpleSummaryProvider="true" />
+
+    <EditTextPreference
+        app:key="username"
+        app:title="@string/username"
+        app:useSimpleSummaryProvider="true" />
+
+    <EditTextPreference
+        app:key="password"
+        app:title="@string/password"
+        app:useSimpleSummaryProvider="false"
+        app:summary="******"/>
+
+    <EditTextPreference
+        app:key="sync_interval"
+        app:title="@string/sync_interval"
+        app:defaultValue="3"
+        app:useSimpleSummaryProvider="true" />
+
+    <SwitchPreferenceCompat
+        app:key="quick_sync"
+        app:title="@string/quick_sync"
+        app:summary="@string/quick_sync_summary"
+        app:defaultValue="true" />
+
+    <Preference
+        app:key="test_connection"
+        app:title="@string/test_connection"
+        app:summary="Click to test server configuration" />
+
+</PreferenceScreen>
