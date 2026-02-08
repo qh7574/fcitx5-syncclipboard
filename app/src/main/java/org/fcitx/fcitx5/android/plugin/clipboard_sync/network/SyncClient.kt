@@ -137,11 +137,16 @@ object SyncClient {
             } else {
                 // Save file
                 if (downloadDirUri != null) {
-                    saveFile(context, downloadDirUri, data.dataName, bytes)
+                    val savedUri = saveFile(context, downloadDirUri, data.dataName, bytes)
+                    if (savedUri != null) {
+                        newData = data.copy(text = savedUri.toString())
+                        Log.d(TAG, "[Pull] Updated ClipboardData text to URI: ${newData.text}")
+                    }
                 } else {
                     Log.w(TAG, "[Pull] No download directory set, skipping file save")
                 }
             }
+            Unit
         }
         return newData
     }
@@ -159,7 +164,7 @@ object SyncClient {
         return downloadDetails(context, serverUrl, username, pass, data, downloadDirUri)
     }
 
-    private fun saveFile(context: Context, dirUri: Uri, fileName: String, bytes: ByteArray) {
+    private fun saveFile(context: Context, dirUri: Uri, fileName: String, bytes: ByteArray): Uri? {
         try {
             val dir = DocumentFile.fromTreeUri(context, dirUri)
             if (dir != null && dir.isDirectory) {
@@ -172,11 +177,13 @@ object SyncClient {
                         it.write(bytes)
                     }
                     Log.d(TAG, "[Pull] Saved file to $fileName")
+                    return newFile.uri
                 }
             }
         } catch (e: Exception) {
             Log.e(TAG, "[Pull] Failed to save file", e)
         }
+        return null
     }
 
     fun putClipboard(

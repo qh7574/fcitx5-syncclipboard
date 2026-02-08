@@ -178,6 +178,7 @@ class MainService : FcitxPluginService() {
             }
 
             val remoteText = data.text
+            Log.d(TAG, "[Pull] Processed data: type=${data.type}, text=$remoteText")
             
             if (remoteText.isNotEmpty() && remoteText != lastLocalContent && remoteText != lastRemoteContent) {
                 Log.d(TAG, "[Pull] Remote content changed, updating local")
@@ -185,7 +186,11 @@ class MainService : FcitxPluginService() {
                 lastLocalContent = remoteText // Update local cache to prevent echo
                 
                 withContext(Dispatchers.Main) {
-                    updateSystemClipboard(remoteText)
+                    if (data.type == "Text") {
+                        updateSystemClipboard(remoteText)
+                    } else {
+                        updateSystemClipboardWithUri(Uri.parse(remoteText))
+                    }
                 }
             }
         } catch (e: Exception) {
@@ -198,9 +203,20 @@ class MainService : FcitxPluginService() {
             val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
             val clip = ClipData.newPlainText("SyncClipboard", text)
             clipboard.setPrimaryClip(clip)
-            Log.d(TAG, "[Pull] System clipboard updated")
+            Log.d(TAG, "[Pull] System clipboard updated (Text)")
         } catch (e: Exception) {
             Log.e(TAG, "[Pull] Failed to update system clipboard", e)
+        }
+    }
+
+    private fun updateSystemClipboardWithUri(uri: Uri) {
+        try {
+            val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+            val clip = ClipData.newUri(contentResolver, "SyncClipboard", uri)
+            clipboard.setPrimaryClip(clip)
+            Log.d(TAG, "[Pull] System clipboard updated with URI: $uri")
+        } catch (e: Exception) {
+            Log.e(TAG, "[Pull] Failed to update system clipboard with URI", e)
         }
     }
 }
