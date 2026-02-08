@@ -1,6 +1,6 @@
 # Fcitx5 Android 剪贴板同步插件 (SyncClipboard)
 
-这是一个为 [fcitx5-android](https://github.com/fcitx5-android/fcitx5-android) 开发的插件，用于实现与 [SyncClipboard](https://github.com/Zornella/SyncClipboard) 服务的剪贴板同步功能。
+这是一个为 [fcitx5-android](https://github.com/fcitx5-android/fcitx5-android) 开发的插件，用于实现与 [SyncClipboard](https://github.com/Jeric-X/SyncClipboard)服务的剪贴板同步功能。
 
 注意：fcitx5-android目前只允许同签名插件注入并运行，请到 [Fcitx5-Android-ResignforSyncclipboard](https://github.com/qh7574/Fcitx5-Android-ResignforSyncclipboard) 下载重新签名后的主程序以及插件APK并安装，注意备份数据！
 
