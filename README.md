@@ -1,6 +1,6 @@
 # Fcitx5 Android 剪贴板同步插件 (SyncClipboard)
 
-这是一个为 [fcitx5-android](https://github.com/fcitx5-android/fcitx5-android) 开发的插件，用于实现与 [SyncClipboard](https://github.com/Zornella/SyncClipboard) 服务的剪贴板同步功能。
+这是一个为 [fcitx5-android](https://github.com/fcitx5-android/fcitx5-android) 开发的插件，用于实现与 [SyncClipboard](https://github.com/Jeric-X/SyncClipboard) 服务的剪贴板同步功能。
 
 注意：fcitx5-android目前只允许同签名插件注入并运行，请到 [Fcitx5-Android-ResignforSyncclipboard](https://github.com/qh7574/Fcitx5-Android-ResignforSyncclipboard) 下载重新签名后的主程序以及插件APK并安装，注意备份数据！
 
@@ -11,6 +11,7 @@
 *   **功耗优化**：息屏或省电模式下动态降低频率或关闭轮询，以减少电池消耗，同时使用兼容 WebDAV ETag 减少流量消耗。
 *   **格式支持**：支持同步文本、图片、文件等格式，智能复制 uri 到剪贴板。
 *   **断网重试**：后台轮询机制包含错误处理和重试逻辑。
+*   **控制磁贴**：提供磁贴开关，可在通知中心控制同步开启/关闭。
 
 ## 编译指南
 
@@ -34,7 +35,7 @@
     *   **同步间隔**：设置后台轮询间隔（默认为 3 秒）。
     *   **下载目录**：设置同步非文本文件（如图片、文件）时的保存目录。
     *   点击“测试连接”按钮验证配置是否正确。
-    *   **注意**：快速同步开关仍在调试中，请保持开启。
+    *   **开启同步**：确保“开启同步”开关处于打开状态。
 
 
 

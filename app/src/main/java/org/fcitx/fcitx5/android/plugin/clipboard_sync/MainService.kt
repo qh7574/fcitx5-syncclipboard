@@ -135,6 +135,10 @@ class MainService : FcitxPluginService() {
     }
 
     private fun uploadToCloud(text: String) {
+        if (!prefs.getBoolean("quick_sync", true)) {
+            Log.d(TAG, "[Push] Sync disabled, skipping upload")
+            return
+        }
         val url = prefs.getString("server_address", "") ?: ""
         val user = prefs.getString("username", "") ?: ""
         val pass = prefs.getString("password", "") ?: ""

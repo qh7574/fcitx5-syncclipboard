@@ -14,8 +14,8 @@
     <string name="connection_failed">连接失败</string>
     <string name="testing_connection">正在测试连接...</string>
     
-    <string name="quick_sync">快速同步</string>
-    <string name="quick_sync_summary">开启时后台持续轮询；关闭时仅在输入法激活时轮询（当前仅支持后台持续轮询或手动同步）</string>
+    <string name="quick_sync">开启同步</string>
+    <string name="quick_sync_summary">关闭后将停止所有同步服务</string>
     <string name="please_set_server_address">请先设置服务器地址</string>
     <string name="connecting_to">正在连接到 %s...</string>
     <string name="unknown_error">未知错误</string>
@@ -24,4 +24,6 @@
     <string name="download_path_summary">点击选择文件下载保存位置</string>
     <string name="download_path_not_set">未设置</string>
     <string name="clicktest">点击测试服务器可用性</string>
+    
+    <string name="quick_sync_tile_label">剪贴板同步</string>
 </resources>

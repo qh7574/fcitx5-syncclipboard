@@ -34,5 +34,16 @@
             </intent-filter>
         </activity>
 
+        <service
+            android:name=".service.QuickSyncTileService"
+            android:icon="@drawable/syncclip"
+            android:label="@string/quick_sync_tile_label"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
+
     </application>
 </manifest>
