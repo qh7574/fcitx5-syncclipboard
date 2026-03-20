@@ -51,8 +51,6 @@ captures/
 .idea/navEditor.xml
 .idea/compiler.xml
 .idea/misc.xml
-# Keep code style configs
-! .idea/codeStyles/
 
 # Keystore files
 *.jks
