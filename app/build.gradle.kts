@@ -13,8 +13,8 @@ android {
         applicationId = "org.fcitx.fcitx5.android.plugin.clipboard_sync"
         minSdk = 24
         targetSdk = 34
-        versionCode = 2
-        versionName = "0.1.2"
+        versionCode = 100003
+        versionName = "0.1.3"
 
         // Config for Fcitx5
         buildConfigField("String", "MAIN_APPLICATION_ID", "\"org.fcitx.fcitx5.android\"")
